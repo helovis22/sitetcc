@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cab47c; /* Cor de fundo semelhante ao protótipo */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #346038;
+    box-shadow: 0 2px 4px rgba(127, 168, 50, 0.1);
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item, .site-name {
+    text-decoration: none;
+    color: #cab47c;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu-item:hover, .site-name:hover {
+    color: #346038;
+}
+
+.Tom-selecionado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.Tom-selecionado h2 {
+    font-family: 'Roboto', sans-serif; /* Fonte desejada */
+    color: #181B18; /* Cor do texto */
+    font-size: 1.5rem; /* Tamanho da fonte */
+    margin: 20px 0; /* Margem superior e inferior */
+    text-align: center; /* Centraliza o texto */
+}
+ .subtone-display {
+    width: 150px; /* Ajuste da largura */
+    height: 150px; /* Ajuste da altura */
+    border-radius: 80px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+}
+.tone-display{
+    width: 150px; /* Ajuste da largura */
+    height: 150px; /* Ajuste da altura */
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+#subtone-display {
+    background-color: #f0f0f0; /* Cor neutra inicial */
+}
+
+#tone-display {
+    background-color: #f0f0f0; /* Cor neutra inicial */
+}
+
+.subtom-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.subtom-card {
+    width: 120px;
+    height: 180px;
+    border-radius: 15px;
+    background-color: #f0e6d2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.subtom-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.subtom-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+#subtom-frio {
+    background-color: #040699; /* Cor azul para subtom frio */
+}
+
+#subtom-quente {
+    background-color: #B84600; /* Cor laranja para subtom quente */
+}
+
+#subtom-neutro {
+    background-color: #CACACA; /* Cor cinza para subtom neutro */
+}
+
+
+footer {
+    background-color: #346038;
+    color: #cab47c;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-content p {
+    font-size: 16px;
+    margin-bottom: 0;
+}

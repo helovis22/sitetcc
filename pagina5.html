@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleve sua maquiagem</title>
+    <link rel="stylesheet" href="pg5.css">
+</head>
+<body>
+    <header>
+        <div class="name">
+            <a href="index.html" class="site-name">Oblivion</a>
+        </div>
+        <div class="menu">
+            <a href="index.html" class="menu-item">Início</a>
+        </div>
+    </header>
+
+    <div class="Tom-selecionado">
+        <h2>Seu Subtom:</h2>
+        <div id="subtone-display" class="subtone-display"></div>
+        <h2>Seu Tom:</h2>
+        <div id="tone-display" class="tone-display"></div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Oblivion-Contato</p>
+            <p>e-mail: oblivion@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // tom de pele selecionado do localStorage
+        const selectedTone = localStorage.getItem('selectedTone');
+        const toneDisplay = document.getElementById('tone-display');
+        const subtoneDisplay = document.getElementById('subtone-display');
+    
+        if (selectedTone) {
+            toneDisplay.textContent = `Tom de pele ${selectedTone}`;
+            const toneColor = getToneColor(selectedTone);
+            toneDisplay.style.backgroundColor = toneColor;
+            toneDisplay.style.color = "#fff";  // Cor do texto
+    
+            // Detectar subtom com base na cor
+            const subtone = detectSubtone(toneColor);
+            subtoneDisplay.textContent = `Subtom: ${subtone}`;
+            subtoneDisplay.style.backgroundColor = subtone === 'Subtom Frio' ? '#0000FF' : subtone === 'Subtom Quente' ? '#FFA500' : '#808080'; // cores representando subtons
+            subtoneDisplay.style.color = '#fff'; // Cor do texto para contraste
+        } else {
+            toneDisplay.textContent = 'Nenhum tom selecionado.';
+            toneDisplay.style.backgroundColor = '#fff'; // Cor padrão
+        }
+
+        //  associar o tom de pele a sua cor
+        function getToneColor(tone) {
+            switch (tone) {
+                case '1': return '#8d5524'; // Cor para tom 1
+                case '2': return '#c68642'; // Cor para tom 2
+                case '3': return '#e0ac69'; // Cor para tom 3
+                case '4': return '#f1c27d'; // Cor para tom 4
+                case '5': return '#ffdbac'; // Cor para tom 5
+                default: return '#fff'; // Cor padrão
+            }
+        }
+
+        // detectar o subtom baseado na cor
+        function detectSubtone(color) {
+            const warmColors = ['#8d5524', '#c68642']; // Tons quentes
+            const coolColors = ['#ffdbac']; // Tons frios
+            const neutralColors = ['#e0ac69', '#f1c27d']; // Tons neutros
+
+            if (warmColors.includes(color)) {
+                return 'Subtom Quente';
+            } else if (coolColors.includes(color)) {
+                return 'Subtom Frio';
+            } else if (neutralColors.includes(color)) {
+                return 'Subtom Neutro';
+            } else {
+                return 'Neutro';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
